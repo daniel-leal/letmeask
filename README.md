@@ -153,6 +153,6 @@ The following tools were used in the construction of the project:
 
 ## License
 
-This project is under the license [MIT](./LICENSE).
+This project is under the license [MIT](./LICENSE.md).
 
 Made with ❤ by Daniel Leal 👋🏽 [Get in Touch!](https://www.linkedin.com/in/daniel-borges-leal-58198087/)
