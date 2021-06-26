@@ -44,7 +44,6 @@
  <a href="#layout">Layout</a> • 
  <a href="#how-it-works">How it works</a> • 
  <a href="#tech-stack">Tech Stack</a> • 
- <a href="#contributors">Contributors</a> • 
  <a href="#author">Author</a> • 
  <a href="#user-content-license">License</a>
 
@@ -70,7 +69,7 @@
 The application layout is available on Figma:
 
 <a href="https://www.figma.com/file/aJlXp6t9uFkuXzjggwAIW7/Letmeask?node-id=0%3A1">
-  <img alt="Made by daniel-leal" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
+  <img alt="Made by daniel-leal" src="https://img.shields.io/badge/Access%20Layout%20-Figma-%2304D361">
 </a>
 
 ---
