@@ -32,10 +32,6 @@
    <a href="https://github.com/daniel-leal/letmeask/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/daniel-leal/letmeask?style=social">
   </a>
-
-  <a href="https://blog.rocketseat.com.br/">
-    <img alt="Stargazers" src="https://img.shields.io/badge/Blog-Rocketseat-%237159c1?style=flat&logo=ghost">
-    </a> 
 </p>
 
 <h4 align="center"> 
