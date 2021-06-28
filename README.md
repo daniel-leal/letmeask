@@ -23,28 +23,28 @@
   <a href="https://www.twitter.com/daniel_leal1/">
     <img alt="Siga no Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fdaniel-leal%2Fletmeask">
   </a>
-  
+
   <a href="https://github.com/daniel-leal/letmeask/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daniel-leal/letmeask">
   </a>
-    
+
    <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
    <a href="https://github.com/daniel-leal/letmeask/stargazers">
     <img alt="Stargazers" src="https://img.shields.io/github/stars/daniel-leal/letmeask?style=social">
   </a>
 </p>
 
-<h4 align="center"> 
+<h4 align="center">
 	 Status: In progress
 </h4>
 
 <p align="center">
  <a href="#about">About</a> •
  <a href="#features">Features</a> •
- <a href="#layout">Layout</a> • 
- <a href="#how-it-works">How it works</a> • 
- <a href="#tech-stack">Tech Stack</a> • 
- <a href="#author">Author</a> • 
+ <a href="#layout">Layout</a> •
+ <a href="#how-it-works">How it works</a> •
+ <a href="#tech-stack">Tech Stack</a> •
+ <a href="#author">Author</a> •
  <a href="#user-content-license">License</a>
 
 </p>
@@ -122,6 +122,7 @@ The following tools were used in the construction of the project:
 - **[Firebase](https://firebase.google.com/docs/web/setup?hl=pt-br)**
 - **[ESLint](https://eslint.org/)**
 - **[Prettier](https://prettier.io/)**
+- **[Styled-Components](https://styled-components.com/)**
 
 > See the file [package.json](https://github.com/daniel-leal/letmeask/blob/master/web/package.json)
 
