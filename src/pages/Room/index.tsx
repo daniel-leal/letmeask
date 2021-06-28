@@ -1,15 +1,26 @@
 import React, { FormEvent, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import logoImg from '../assets/images/logo.svg'
-import { Button } from '../components/Button'
-import { Question } from '../components/Question'
-import { RoomCode } from '../components/RoomCode'
-import { useAuth } from '../hooks/useAuth'
-import { useRoom } from '../hooks/useRoom'
-import { database } from '../services/firebase'
+import logoImg from '../../assets/images/logo.svg'
 
-import '../styles/room.scss'
+import { Button } from '../../components/Button'
+import { Question } from '../../components/Question'
+import { RoomCode } from '../../components/RoomCode'
+import { useAuth } from '../../hooks/useAuth'
+import { useRoom } from '../../hooks/useRoom'
+import { database } from '../../services/firebase'
+
+import {
+  Container,
+  Content,
+  Form,
+  FormFooter,
+  Header,
+  Main,
+  QuestionList,
+  RoomTitle,
+  UserInfo
+} from './styles'
 
 type RoomParams = {
   id: string
@@ -64,33 +75,33 @@ export const Room: React.FC = () => {
   }
 
   return (
-    <div id="page-room">
-      <header>
-        <div className="content">
+    <Container>
+      <Header>
+        <Content>
           <img src={logoImg} alt="Letmeask" />
           <RoomCode code={roomId} />
-        </div>
-      </header>
+        </Content>
+      </Header>
 
-      <main>
-        <div className="room-title">
+      <Main>
+        <RoomTitle>
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
-        </div>
+        </RoomTitle>
 
-        <form onSubmit={handleSendQuestion}>
+        <Form onSubmit={handleSendQuestion}>
           <textarea
             placeholder="O que você quer perguntar?"
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
           />
 
-          <div className="form-footer">
+          <FormFooter>
             {user ? (
-              <div className="user-info">
+              <UserInfo>
                 <img src={user.avatar} alt={user.name} />
                 <span>{user.name}</span>
-              </div>
+              </UserInfo>
             ) : (
               <span>
                 Para enviar uma pergunta, faça <button>seu login</button>.
@@ -99,10 +110,10 @@ export const Room: React.FC = () => {
             <Button type="submit" disabled={!user}>
               Enviar pergunta
             </Button>
-          </div>
-        </form>
+          </FormFooter>
+        </Form>
 
-        <div className="question-list">
+        <QuestionList>
           {questions.map(question => (
             <Question
               key={question.id}
@@ -140,8 +151,8 @@ export const Room: React.FC = () => {
               )}
             </Question>
           ))}
-        </div>
-      </main>
-    </div>
+        </QuestionList>
+      </Main>
+    </Container>
   )
 }

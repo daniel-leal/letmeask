@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import cx from 'classnames'
 
-import '../styles/question.scss'
+import { Container, Footer, UserInfo } from './styles'
 
 type QuestionProps = {
   content: string
@@ -22,21 +22,20 @@ export const Question: React.FC<QuestionProps> = ({
   isHighlighted = false
 }) => {
   return (
-    <div
+    <Container
       className={cx(
-        'question',
         { answered: isAnswered },
         { highlighted: isHighlighted && !isAnswered }
       )}
     >
       <p>{content}</p>
-      <footer>
-        <div className="user-info">
+      <Footer>
+        <UserInfo>
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
-        </div>
+        </UserInfo>
         <div>{children}</div>
-      </footer>
-    </div>
+      </Footer>
+    </Container>
   )
 }

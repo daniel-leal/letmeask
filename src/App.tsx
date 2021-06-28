@@ -9,19 +9,24 @@ import { AdminRoom } from './pages/AdminRoom'
 
 import { AuthContextProvider } from './contexts/AuthContext'
 
+import GlobalStyle from './styles/global'
+
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <AuthContextProvider>
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/rooms/new" exact component={NewRoom} />
-          <Route path="/rooms/:id" component={Room} />
+    <>
+      <GlobalStyle />
+      <BrowserRouter>
+        <AuthContextProvider>
+          <Switch>
+            <Route path="/" exact component={Home} />
+            <Route path="/rooms/new" exact component={NewRoom} />
+            <Route path="/rooms/:id" component={Room} />
 
-          <Route path="/admin/rooms/:id" component={AdminRoom} />
-        </Switch>
-      </AuthContextProvider>
-    </BrowserRouter>
+            <Route path="/admin/rooms/:id" component={AdminRoom} />
+          </Switch>
+        </AuthContextProvider>
+      </BrowserRouter>
+    </>
   )
 }
 

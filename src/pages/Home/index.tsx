@@ -1,15 +1,23 @@
 import React, { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router'
 
-import illustrationImg from '../assets/images/illustration.svg'
-import logoImg from '../assets/images/logo.svg'
-import googleIconImg from '../assets/images/google-icon.svg'
+import illustrationImg from '../../assets/images/illustration.svg'
+import logoImg from '../../assets/images/logo.svg'
+import googleIconImg from '../../assets/images/google-icon.svg'
 
-import { useAuth } from '../hooks/useAuth'
-import { Button } from '../components/Button'
+import { useAuth } from '../../hooks/useAuth'
+import { Button } from '../../components/Button'
 
-import '../styles/auth.scss'
-import { database } from '../services/firebase'
+import { database } from '../../services/firebase'
+import {
+  Banner,
+  Container,
+  Content,
+  CreateRoomButton,
+  JoinRoomForm,
+  Main,
+  Separator
+} from './styles'
 
 export const Home: React.FC = () => {
   const history = useHistory()
@@ -47,24 +55,24 @@ export const Home: React.FC = () => {
   }
 
   return (
-    <div id="page-auth">
-      <aside>
+    <Container>
+      <Banner>
         <img
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
         <strong>Crie salas de Q&amp;A ao-vivo</strong>
         <p>Tire as dúvidas da sua audiência em tempo real</p>
-      </aside>
-      <main>
-        <div className="main-content">
+      </Banner>
+      <Main>
+        <Content>
           <img src={logoImg} alt="Letmeask" />
-          <button onClick={handleCreateRoom} className="create-room">
+          <CreateRoomButton onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
-          </button>
-          <div className="separator">ou entre em uma sala</div>
-          <form onSubmit={handleJoinRoom}>
+          </CreateRoomButton>
+          <Separator>ou entre em uma sala</Separator>
+          <JoinRoomForm onSubmit={handleJoinRoom}>
             <input
               type="text"
               placeholder="Digite o código da sala"
@@ -72,9 +80,9 @@ export const Home: React.FC = () => {
               value={roomCode}
             />
             <Button type="submit">Entrar na sala</Button>
-          </form>
-        </div>
-      </main>
-    </div>
+          </JoinRoomForm>
+        </Content>
+      </Main>
+    </Container>
   )
 }

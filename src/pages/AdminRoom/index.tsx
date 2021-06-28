@@ -2,19 +2,25 @@ import React from 'react'
 
 import { useHistory, useParams } from 'react-router-dom'
 
-import logoImg from '../assets/images/logo.svg'
-import deleteImg from '../assets/images/delete.svg'
-import checkImg from '../assets/images/check.svg'
-import answerImg from '../assets/images/answer.svg'
+import logoImg from '../../assets/images/logo.svg'
+import deleteImg from '../../assets/images/delete.svg'
+import checkImg from '../../assets/images/check.svg'
+import answerImg from '../../assets/images/answer.svg'
 
-import { Button } from '../components/Button'
-import { Question } from '../components/Question'
-import { RoomCode } from '../components/RoomCode'
-// import { useAuth } from '../hooks/useAuth';
-import { useRoom } from '../hooks/useRoom'
+import { Button } from '../../components/Button'
+import { Question } from '../../components/Question'
+import { RoomCode } from '../../components/RoomCode'
+import { useRoom } from '../../hooks/useRoom'
 
-import '../styles/room.scss'
-import { database } from '../services/firebase'
+import { database } from '../../services/firebase'
+import {
+  Container,
+  Content,
+  Header,
+  Main,
+  QuestionList,
+  RoomTitle
+} from '../Room/styles'
 
 type RoomParams = {
   id: string
@@ -54,9 +60,9 @@ export const AdminRoom: React.FC = () => {
   }
 
   return (
-    <div id="page-room">
-      <header>
-        <div className="content">
+    <Container>
+      <Header>
+        <Content>
           <img src={logoImg} alt="Letmeask" />
           <div>
             <RoomCode code={roomId} />
@@ -64,16 +70,16 @@ export const AdminRoom: React.FC = () => {
               Encerrar sala
             </Button>
           </div>
-        </div>
-      </header>
+        </Content>
+      </Header>
 
-      <main>
-        <div className="room-title">
+      <Main>
+        <RoomTitle>
           <h1>Sala {title}</h1>
           {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
-        </div>
+        </RoomTitle>
 
-        <div className="question-list">
+        <QuestionList>
           {questions.map(question => (
             <Question
               key={question.id}
@@ -106,8 +112,8 @@ export const AdminRoom: React.FC = () => {
               </button>
             </Question>
           ))}
-        </div>
-      </main>
-    </div>
+        </QuestionList>
+      </Main>
+    </Container>
   )
 }
