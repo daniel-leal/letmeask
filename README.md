@@ -59,8 +59,10 @@
 
 - [x] Create rooms
 - [x] Enter rooms
+- [x] Enter admin rooms
 - [x] Add questions
 - [x] Answer questions
+- [x] Highlight questions
 
 ---
 
