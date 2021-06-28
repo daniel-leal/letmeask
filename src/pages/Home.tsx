@@ -1,49 +1,49 @@
-import { FormEvent, useState } from 'react';
-import { useHistory } from 'react-router';
+import React, { FormEvent, useState } from 'react'
+import { useHistory } from 'react-router'
 
-import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
-import googleIconImg from '../assets/images/google-icon.svg';
+import illustrationImg from '../assets/images/illustration.svg'
+import logoImg from '../assets/images/logo.svg'
+import googleIconImg from '../assets/images/google-icon.svg'
 
-import { useAuth } from '../hooks/useAuth';
-import { Button } from '../components/Button';
+import { useAuth } from '../hooks/useAuth'
+import { Button } from '../components/Button'
 
-import '../styles/auth.scss';
-import { database } from '../services/firebase';
+import '../styles/auth.scss'
+import { database } from '../services/firebase'
 
-export function Home() {
-  const history = useHistory();
-  const { signInWithGoogle, user } = useAuth();
-  const [roomCode, setRoomCode] = useState('');
+export const Home: React.FC = () => {
+  const history = useHistory()
+  const { signInWithGoogle, user } = useAuth()
+  const [roomCode, setRoomCode] = useState('')
 
   async function handleCreateRoom() {
     if (!user) {
-      await signInWithGoogle();
+      await signInWithGoogle()
     }
 
-    history.push('/rooms/new');
+    history.push('/rooms/new')
   }
 
   async function handleJoinRoom(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
     if (roomCode.trim() === '') {
-      return;
+      return
     }
 
-    const roomRef = await database.ref(`rooms/${roomCode}`).get();
+    const roomRef = await database.ref(`rooms/${roomCode}`).get()
 
     if (!roomRef.exists()) {
-      alert('Room does not exists');
-      return;
+      alert('Room does not exists')
+      return
     }
 
     if (roomRef.val().endedAt) {
-      alert('Room already closed');
-      return;
+      alert('Room already closed')
+      return
     }
 
-    history.push(`/rooms/${roomCode}`);
+    history.push(`/rooms/${roomCode}`)
   }
 
   return (
@@ -68,7 +68,7 @@ export function Home() {
             <input
               type="text"
               placeholder="Digite o código da sala"
-              onChange={(event) => setRoomCode(event.target.value)}
+              onChange={event => setRoomCode(event.target.value)}
               value={roomCode}
             />
             <Button type="submit">Entrar na sala</Button>
@@ -76,5 +76,5 @@ export function Home() {
         </div>
       </main>
     </div>
-  );
+  )
 }

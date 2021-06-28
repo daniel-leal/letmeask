@@ -1,35 +1,35 @@
-import { FormEvent, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { FormEvent, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 
-import illustrationImg from '../assets/images/illustration.svg';
-import logoImg from '../assets/images/logo.svg';
+import illustrationImg from '../assets/images/illustration.svg'
+import logoImg from '../assets/images/logo.svg'
 
-import { useAuth } from '../hooks/useAuth';
-import { Button } from '../components/Button';
+import { useAuth } from '../hooks/useAuth'
+import { Button } from '../components/Button'
 
-import '../styles/auth.scss';
-import { database } from '../services/firebase';
+import '../styles/auth.scss'
+import { database } from '../services/firebase'
 
-export function NewRoom() {
-  const { user } = useAuth();
-  const history = useHistory();
-  const [newRoom, setNewRoom] = useState('');
+export const NewRoom: React.FC = () => {
+  const { user } = useAuth()
+  const history = useHistory()
+  const [newRoom, setNewRoom] = useState('')
 
   async function handleCreateRoom(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault()
 
     if (newRoom.trim() === '') {
-      return;
+      return
     }
 
-    const roomRef = database.ref('rooms');
+    const roomRef = database.ref('rooms')
 
     const firebaseRoom = await roomRef.push({
       title: newRoom,
-      authorId: user?.id,
-    });
+      authorId: user?.id
+    })
 
-    history.push(`/rooms/${firebaseRoom.key}`);
+    history.push(`/rooms/${firebaseRoom.key}`)
   }
 
   return (
@@ -51,7 +51,7 @@ export function NewRoom() {
             <input
               type="text"
               placeholder="Nome da sala"
-              onChange={(event) => setNewRoom(event.target.value)}
+              onChange={event => setNewRoom(event.target.value)}
               value={newRoom}
             />
             <Button type="submit">Criar sala</Button>
@@ -62,5 +62,5 @@ export function NewRoom() {
         </div>
       </main>
     </div>
-  );
+  )
 }

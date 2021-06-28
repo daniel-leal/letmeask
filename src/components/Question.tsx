@@ -1,26 +1,26 @@
-import { ReactNode } from 'react';
-import cx from 'classnames';
+import React, { ReactNode } from 'react'
+import cx from 'classnames'
 
-import '../styles/question.scss';
+import '../styles/question.scss'
 
 type QuestionProps = {
-  content: string;
+  content: string
   author: {
-    name: string;
-    avatar: string;
-  };
-  children?: ReactNode;
-  isAnswered?: boolean;
-  isHighlighted?: boolean;
-};
+    name: string
+    avatar: string
+  }
+  children?: ReactNode
+  isAnswered?: boolean
+  isHighlighted?: boolean
+}
 
-export function Question({
+export const Question: React.FC<QuestionProps> = ({
   content,
   author,
   children,
   isAnswered = false,
-  isHighlighted = false,
-}: QuestionProps) {
+  isHighlighted = false
+}) => {
   return (
     <div
       className={cx(
@@ -38,5 +38,5 @@ export function Question({
         <div>{children}</div>
       </footer>
     </div>
-  );
+  )
 }

@@ -1,14 +1,16 @@
-import copyImg from '../assets/images/copy.svg';
+import React from 'react'
 
-import '../styles/room-code.scss';
+import copyImg from '../assets/images/copy.svg'
+
+import '../styles/room-code.scss'
 
 type RoomCodeProps = {
-  code: string;
-};
+  code: string
+}
 
-export function RoomCode(props: RoomCodeProps) {
+export const RoomCode: React.FC<RoomCodeProps> = ({ code }) => {
   function copyRoomCodeToClippboard() {
-    navigator.clipboard.writeText(props.code);
+    navigator.clipboard.writeText(code)
   }
 
   return (
@@ -16,7 +18,7 @@ export function RoomCode(props: RoomCodeProps) {
       <div>
         <img src={copyImg} alt="Copy room code" />
       </div>
-      <span>Sala #-McuXWZoSZAIMQlIrDx8?</span>
+      <span>Sala {code}</span>
     </button>
-  );
+  )
 }
