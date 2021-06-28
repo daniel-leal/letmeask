@@ -120,6 +120,8 @@ The following tools were used in the construction of the project:
 - **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
 - **[SASS](https://www.npmjs.com/package/sass)**
 - **[Firebase](https://firebase.google.com/docs/web/setup?hl=pt-br)**
+- **[ESLint](https://eslint.org/)**
+- **[Prettier](https://prettier.io/)**
 
 > See the file [package.json](https://github.com/daniel-leal/letmeask/blob/master/web/package.json)
 
