@@ -51,7 +51,7 @@
 
 ## About let me ask
 
-💡 Let me ask - is an open source project made in Next Level Week Together by rocketseat.
+💡 Let me ask - is an open source project made in Next Level Week Together by rocketseat. [DEMO](https://letmeask-c54d5.web.app/)
 
 ---
 
