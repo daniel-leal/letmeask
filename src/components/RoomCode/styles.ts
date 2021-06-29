@@ -6,14 +6,14 @@ export const Button = styled.button`
   overflow: hidden;
 
   background: #fff;
-  border: 1px solid #835afd;
+  border: 1px solid ${props => props.theme.colors.primary};
   cursor: pointer;
 
   display: flex;
 `
 
 export const CopyButton = styled.div`
-  background: #835afd;
+  background: ${props => props.theme.colors.primary};
   padding: 0 12px;
   display: flex;
   justify-content: center;

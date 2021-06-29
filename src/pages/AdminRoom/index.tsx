@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { useHistory, useParams } from 'react-router-dom'
+import Switch from 'react-switch'
+import { ThemeContext } from 'styled-components'
+import { FiSun, FiMoon } from 'react-icons/fi'
 
 import logoImg from '../../assets/images/logo.svg'
 import deleteImg from '../../assets/images/delete.svg'
@@ -22,6 +25,8 @@ import {
   RoomTitle
 } from '../Room/styles'
 
+import { useTheme } from '../../hooks/useTheme'
+
 type RoomParams = {
   id: string
 }
@@ -30,6 +35,8 @@ export const AdminRoom: React.FC = () => {
   const history = useHistory()
   const params = useParams<RoomParams>()
   const roomId = params.id
+  const { colors } = useContext(ThemeContext)
+  const { theme, toggleTheme } = useTheme()
 
   const { title, questions } = useRoom(roomId)
 
@@ -69,6 +76,40 @@ export const AdminRoom: React.FC = () => {
             <Button isOutlined onClick={handleEndRoom}>
               Encerrar sala
             </Button>
+            <Switch
+              onChange={toggleTheme}
+              checked={theme.name === 'light'}
+              checkedIcon={
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    fontSize: 15,
+                    paddingRight: 2
+                  }}
+                >
+                  <FiSun size={15} />
+                </div>
+              }
+              uncheckedIcon={
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    fontSize: 15,
+                    paddingRight: 2
+                  }}
+                >
+                  <FiMoon size={15} color={colors.text} />
+                </div>
+              }
+              offColor={colors.disabled}
+              onColor={colors.ballSwitch}
+            />
           </div>
         </Content>
       </Header>

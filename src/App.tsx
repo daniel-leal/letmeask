@@ -10,10 +10,11 @@ import { AdminRoom } from './pages/AdminRoom'
 import { AuthContextProvider } from './contexts/AuthContext'
 
 import GlobalStyle from './styles/global'
+import { CustomThemeProvider } from './contexts/CustomThemeContext'
 
 const App: React.FC = () => {
   return (
-    <>
+    <CustomThemeProvider>
       <GlobalStyle />
       <BrowserRouter>
         <AuthContextProvider>
@@ -26,7 +27,7 @@ const App: React.FC = () => {
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>
-    </>
+    </CustomThemeProvider>
   )
 }
 
