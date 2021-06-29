@@ -10,4 +10,4 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button: React.FC<ButtonProps> = ({
   isOutlined = false,
   ...props
-}) => <ButtonContainer className={cx({ isOutlined: 'outlined' })} {...props} />
+}) => <ButtonContainer className={cx({ outlined: isOutlined })} {...props} />
