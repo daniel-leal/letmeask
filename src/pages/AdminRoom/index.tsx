@@ -76,41 +76,41 @@ export const AdminRoom: React.FC = () => {
             <Button isOutlined onClick={handleEndRoom}>
               Encerrar sala
             </Button>
-            <Switch
-              onChange={toggleTheme}
-              checked={theme.name === 'light'}
-              checkedIcon={
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    height: '100%',
-                    fontSize: 15,
-                    paddingRight: 2
-                  }}
-                >
-                  <FiSun size={15} />
-                </div>
-              }
-              uncheckedIcon={
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    height: '100%',
-                    fontSize: 15,
-                    paddingRight: 2
-                  }}
-                >
-                  <FiMoon size={15} color={colors.text} />
-                </div>
-              }
-              offColor={colors.disabled}
-              onColor={colors.ballSwitch}
-            />
           </div>
+          <Switch
+            onChange={toggleTheme}
+            checked={theme.name === 'light'}
+            checkedIcon={
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
+                  fontSize: 15,
+                  paddingRight: 2
+                }}
+              >
+                <FiSun size={15} />
+              </div>
+            }
+            uncheckedIcon={
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '100%',
+                  fontSize: 15,
+                  paddingRight: 2
+                }}
+              >
+                <FiMoon size={15} color={colors.text} />
+              </div>
+            }
+            offColor={colors.disabled}
+            onColor={colors.ballSwitch}
+          />
         </Content>
       </Header>
 

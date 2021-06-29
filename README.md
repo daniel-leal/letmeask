@@ -2,14 +2,12 @@
   <img alt="Letmeask" src=".github/logo.svg" width="160px">
 </p>
 
+---
+
 <p align="center">
   <img  src="https://img.shields.io/static/v1?label=license&message=MIT&color=5965E0&labelColor=835AFD" alt="License">
   <img src="https://img.shields.io/github/stars/daniel-leal/letmeask?label=stars&message=MIT&color=5965E0&labelColor=835AFD" alt="Stars">
 </p>
-
-<h1 align="center">
-    <img alt="Letmeask" title="Letmeask" src=".github/cover.svg" />
-</h1>
 
 <h3 align="center">
     Create rooms to publish and answer questions.
@@ -63,6 +61,7 @@
 - [x] Add questions
 - [x] Answer questions
 - [x] Highlight questions
+- [x] Switch Theme (Dark and Light)
 
 ---
 
@@ -73,6 +72,23 @@ The application layout is available on Figma:
 <a href="https://www.figma.com/file/aJlXp6t9uFkuXzjggwAIW7/Letmeask?node-id=0%3A1">
   <img alt="Made by daniel-leal" src="https://img.shields.io/badge/Access%20Layout%20-Figma-%2304D361">
 </a>
+
+## Web
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center; gap: 8px;">
+  <img alt="Cover" title="#Cover" src=".github/cover.svg" width="200px" height="127px">
+  <img alt="CoverDark" title="#CoverDark" src=".github/cover-dark.png" width="200px" height="115px" style="margin-top: 6px;">
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center; gap: 8px;">
+  <img alt="Room" title="#Room" src=".github/room.png" width="200px" height="127px">
+  <img alt="RoomDark" title="#RoomDark" src=".github/dark-room.png" width="200px" height="127px">
+</p>
+
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center; gap: 8px;">
+  <img alt="Room" title="#Room" src=".github/admin-room.png" width="200px" height="127px">
+  <img alt="RoomDark" title="#RoomDark" src=".github/admin-dark-room.png" width="200px" height="127px">
+</p>
 
 ---
 
@@ -123,6 +139,8 @@ The following tools were used in the construction of the project:
 - **[ESLint](https://eslint.org/)**
 - **[Prettier](https://prettier.io/)**
 - **[Styled-Components](https://styled-components.com/)**
+- **[React Switch](https://github.com/markusenglund/react-switch)**
+- **[React Icons](https://react-icons.github.io/react-icons/)**
 
 > See the file [package.json](https://github.com/daniel-leal/letmeask/blob/master/web/package.json)
 
